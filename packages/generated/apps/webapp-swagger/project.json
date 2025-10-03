@@ -1,0 +1,33 @@
+{
+  "name": "apps/webapp-swagger",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "targets": {
+    "build": {
+      "executor": "nx:noop",
+      "outputs": [
+        "packages/generated/apps/webapp-swagger"
+      ]
+    },
+    "codegen": {
+      "executor": "@nx-dotnet/core:openapi-codegen",
+      "options": {
+        "useOpenApiGenerator": true,
+        "openApiGenerator": "typescript",
+        "openapiJsonPath": "packages/generated/apps/webapp-swagger",
+        "outputProject": "generated-apps/webapp-types"
+      },
+      "dependsOn": [
+        "swagger"
+      ],
+      "inputs": [
+        "{projectRoot}/packages/generated/apps/webapp-swagger"
+      ],
+      "outputs": [
+        "{workspaceRoot}"
+      ]
+    }
+  },
+  "implicitDependencies": [
+    "apps/webapp"
+  ]
+}
