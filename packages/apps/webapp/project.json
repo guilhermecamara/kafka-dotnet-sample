@@ -1,0 +1,21 @@
+{
+  "name": "apps/webapp",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "packages/apps/webapp",
+  "tags": [],
+  "targets": {
+    "swagger": {
+      "executor": "@nx-dotnet/core:update-swagger",
+      "outputs": [
+        "{workspaceRoot}/packages/generated/apps/webapp-swagger"
+      ],
+      "options": {
+        "output": "packages/generated/apps/webapp-swagger"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    }
+  }
+}
