@@ -1,0 +1,24 @@
+{
+  "name": "@kafka-dotnet-sample/source",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "nx g @nx-dotnet/core:restore",
+    "build": "pnpm nx run-many --target=build --projects=libs/domain,libs/infra,apps/webapp",
+    "test": "pnpm nx run-many --target=test --projects=packages/libs/domain.Test,packages/libs/infra.Test"
+  },
+  "private": true,
+  "devDependencies": {
+    "@nx-dotnet/core": "^3.0.2",
+    "@nx/js": "21.6.3",
+    "@openapitools/openapi-generator-cli": "^2.13.4",
+    "@swc-node/register": "~1.9.1",
+    "@swc/core": "~1.5.7",
+    "@swc/helpers": "~0.5.11",
+    "@types/node": "20.19.9",
+    "nx": "21.6.3",
+    "tslib": "^2.3.0",
+    "typescript": "~5.9.2"
+  },
+  "dependencies": {}
+}
